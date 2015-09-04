@@ -1,0 +1,6 @@
+upstream upstream {
+  server backend;
+
+  server backup backup;
+  server backup:8080 backup;
+}
