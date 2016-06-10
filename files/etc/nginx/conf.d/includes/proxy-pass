@@ -1,0 +1,2 @@
+proxy_redirect http:// https://;
+proxy_pass http://upstream;
