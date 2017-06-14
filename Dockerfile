@@ -9,9 +9,6 @@ RUN \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/
 
-ADD files/etc/nginx/conf.d/ /etc/nginx/conf.d/
-ADD files/etc/nginx/confs-available/ /etc/nginx/confs-available/
-
 # Create built-in 1024, 2048, 3072 & 4096 bit Diffie-Hellman Groups.
 # These are included for convenience. Make sure you understand the
 # implications of using them for production.
@@ -22,3 +19,6 @@ RUN \
   openssl dhparam -out /etc/ssl/private/dhparams.3072.pem 3072 && \
   openssl dhparam -out /etc/ssl/private/dhparams.4096.pem 4096 && \
   ln -vs /etc/ssl/private/dhparams.2048.pem /etc/ssl/private/dhparams.pem
+
+ADD files/etc/nginx/conf.d/ /etc/nginx/conf.d/
+ADD files/etc/nginx/confs-available/ /etc/nginx/confs-available/
